@@ -1,0 +1,8 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "usta-hanym-menu",
+  "compatibility_date": "2026-10-08",
+  "assets": {
+    "directory": "./public"
+  }
+}
