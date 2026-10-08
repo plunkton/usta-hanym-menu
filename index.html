@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Уста Ханым — Турецкая и восточная кухня</title>
+<meta name="description" content="Уста Ханым — турецкая и восточная кухня. Онлайн-меню.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+:root{--paper:#eee0c8;--paper2:#e6d4b8;--ink:#30271f;--muted:#756553;--line:#b7a184;--accent:#8c6742;--white:#f8f1e5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Montserrat,Arial,sans-serif;background:var(--paper);background-image:radial-gradient(rgba(75,45,20,.055) .7px,transparent .7px);background-size:7px 7px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background:linear-gradient(115deg,transparent 0 48%,rgba(80,50,20,.14) 49%,transparent 50%);background-size:9px 9px;mix-blend-mode:multiply}
+header{min-height:670px;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px;position:relative}
+.hero{max-width:900px}
+.mark{font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:6px;margin-bottom:18px;color:var(--muted)}
+.logo{font-family:"Cormorant Garamond",serif;font-size:clamp(56px,10vw,105px);line-height:.82;font-weight:600;letter-spacing:2px;margin:0}
+.logo-sub{font-size:10px;letter-spacing:5px;margin-top:18px;color:var(--muted)}
+.ornament{font-size:30px;margin:36px 0 28px;letter-spacing:12px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(28px,4vw,46px);font-weight:500;margin:0 0 14px}
+.hero p{color:var(--muted);letter-spacing:3px;font-size:12px}
+.btn{display:inline-block;margin-top:28px;padding:16px 28px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;letter-spacing:2px;font-size:11px;font-weight:600;background:rgba(248,241,229,.28);transition:.2s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.intro{max-width:900px;margin:0 auto;padding:35px 25px 70px;text-align:center}
+.intro h2,.menu-section h2,.contact h2{font-family:"Cormorant Garamond",serif;font-weight:600}
+.intro h2{font-size:38px;margin:0 0 12px}
+.intro p{max-width:700px;margin:auto;line-height:1.8;color:var(--muted);font-size:13px}
+.categories{position:sticky;top:0;z-index:10;background:rgba(238,224,200,.95);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:auto;white-space:nowrap}
+.categories-inner{max-width:1250px;margin:auto;display:flex;justify-content:center}
+.categories a{padding:17px 13px;text-decoration:none;color:var(--ink);font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.categories a:hover{color:var(--accent)}
+.menu{max-width:1250px;margin:auto;padding:80px 22px}
+.menu-section{scroll-margin-top:80px;margin-bottom:95px}
+.section-title{display:flex;align-items:center;gap:18px;margin-bottom:35px}
+.section-title>span{font-size:30px}
+.section-title h2{font-size:42px;margin:0}
+.rule{height:1px;background:var(--line);width:120px;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{display:block;position:relative;border:1px solid rgba(117,101,83,.38);background:rgba(248,241,229,.24);min-height:145px}
+
+.card-body{padding:23px 24px 20px}
+.dish-head{display:flex;gap:15px;justify-content:space-between;align-items:flex-start}
+.dish-head h3{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.05;margin:0;font-weight:600}
+.dish-head strong{font-family:"Cormorant Garamond",serif;font-size:20px;white-space:nowrap}
+.meta{font-size:9px;letter-spacing:1px;color:var(--muted);margin-top:6px}
+.card p{font-size:10px;line-height:1.55;color:var(--muted);margin:12px 0 0;max-width:92%}.card:after{content:"✦";position:absolute;right:18px;bottom:10px;font-size:9px;color:var(--line)}
+.contact{border-top:1px solid var(--line);text-align:center;padding:75px 20px 100px}
+.contact h2{font-size:45px;margin:0 0 8px}
+.contact p{color:var(--muted);font-size:12px;line-height:1.8}
+.phone{font-family:"Cormorant Garamond",serif;font-size:29px;margin:20px 0}
+.footer{border-top:1px solid var(--line);padding:25px;text-align:center;font-size:9px;letter-spacing:2px;color:var(--muted)}
+
+.contact-grid{max-width:900px;margin:38px auto 30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;text-align:left}
+.contact-item{display:flex;align-items:center;gap:16px;border:1px solid rgba(117,101,83,.38);background:rgba(248,241,229,.28);padding:18px 20px}
+.contact-icon{width:38px;height:38px;border-radius:50%;background:rgba(183,161,132,.32);display:flex;align-items:center;justify-content:center;font-size:21px;flex:none}
+.contact-item strong{display:block;font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600}
+.contact-item span{display:block;margin-top:4px;font-size:9px;letter-spacing:1px;color:var(--muted)}
+
+@media(max-width:760px){
+ header{min-height:590px;padding:55px 18px}
+ .logo{font-size:65px}
+ .categories-inner{justify-content:flex-start}
+ .categories a{padding:15px 10px}
+ .menu{padding:55px 14px}
+ .contact-grid{grid-template-columns:1fr;margin-top:28px}
+ .grid{grid-template-columns:1fr}
+ .card{min-height:145px}
+ .section-title h2{font-size:35px}
+ .card-body{padding:16px}
+ .dish-head h3{font-size:23px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hero">
+    <div class="mark">ТУРЕЦКАЯ • ВОСТОЧНАЯ КУХНЯ</div>
+    <div class="logo">УСТА<br>ХАНЫМ</div>
+    <div class="logo-sub">ВКУС · ТРАДИЦИИ · ГОСТЕПРИИМСТВО</div>
+    <div class="ornament">⌁ ✦ ⌁</div>
+    <h1>Добро пожаловать в мир восточного гостеприимства</h1>
+    <p>ДААМ · САЛТТАР · МЕЙМАНДОСТУК</p>
+    <a class="btn" href="#menu-start">ОТКРЫТЬ МЕНЮ</a>
+  </div>
+</header>
+<div class="intro" id="menu-start">
+  <h2>Наше меню</h2>
+  <p>Традиционные вкусы, приготовленные с уважением к кухне и гостю. Выбирайте любимые блюда и наслаждайтесь атмосферой Уста Ханым.</p><p style="margin-top:18px;font-size:10px;letter-spacing:1.5px;color:var(--accent)">БЕЗ ФОТОГРАФИЙ · ЧИСТО · ЭЛЕГАНТНО</p>
+</div>
+<nav class="categories"><div class="categories-inner"><a href="#">🔥 Мангал</a>
+<a href="#">🥙 Донер</a>
+<a href="#">🍲 Восточная кухня</a>
+<a href="#">🍜 Супы</a>
+<a href="#">🍢 Шашлыки</a>
+<a href="#">🥗 Салаты</a>
+<a href="#">🍕 Пицца и пиде</a>
+<a href="#">🥔 Гарниры</a>
+<a href="#">⭐ Комбо меню</a>
+<a href="#">🍰 Десерты</a>
+<a href="#">🥤 Напитки</a>
+<a href="#">🍹 Лимонады</a>
+<a href="#">🥛 Смузи и милкшейки</a>
+<a href="#">🫓 Соусы и добавки</a><a href="#contacts">📍 КОНТАКТЫ</a></div></nav>
+<main class="menu">
+
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🔥</span><div><h2>Мангал</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Адана</h3><strong>720 сом</strong></div>
+            <div class="meta">430 г</div>
+            <p>Баранина, болгарский перец, специи, соус сальса.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Урфа</h3><strong>720 сом</strong></div>
+            <div class="meta">430 г</div>
+            <p>Баранина, болгарский перец, специи, соус сальса.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Бейти в тандыре</h3><strong>680 сом</strong></div>
+            <div class="meta">400 г</div>
+            <p>Баранина, болгарский перец, сыр моцарелла, соус сальса.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Тавук шиш</h3><strong>470 сом</strong></div>
+            <div class="meta">420 г</div>
+            <p>Куриное бедро, специи, соус сальса.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Канат шиш</h3><strong>450 сом</strong></div>
+            <div class="meta">420 г</div>
+            <p>Куриные крылья, специи, соус сальса.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Сет Мангал на 4 персоны</h3><strong>4500 сом</strong></div>
+            <div class="meta">1600 г</div>
+            <p>Ассорти для компании.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🥙</span><div><h2>Донер</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Искендер</h3><strong>675 сом</strong></div>
+            <div class="meta">500 г</div>
+            <p>Мясо донер, соус искендер, лук, перец, помидоры.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Хрустящий донер</h3><strong>620 сом</strong></div>
+            <div class="meta">500 г</div>
+            <p>Хрустящий донер с гарниром.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Донер с рисом</h3><strong>620 сом</strong></div>
+            <div class="meta">500 г</div>
+            <p>Мясо донер, овощи, соусы и рис.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Бейти донер</h3><strong>720 сом</strong></div>
+            <div class="meta">500 г</div>
+            <p>Мясо донер, овощи, соус искендер.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Томби с фри</h3><strong>720 сом</strong></div>
+            <div class="meta">430 г</div>
+            <p>Томби, мясо донер, чесночный соус, овощи, фри.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Бургер с говядиной</h3><strong>560 сом</strong></div>
+            <div class="meta">420 г</div>
+            <p>Говяжья котлета, карамелизированный лук, помидоры, чеддер.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Бургер с курицей</h3><strong>490 сом</strong></div>
+            <div class="meta">420 г</div>
+            <p>Куриная котлета, карамелизированный лук, помидоры, чеддер.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Донер-бургер в тандыре</h3><strong>630 сом</strong></div>
+            <div class="meta">440 г</div>
+            <p>Мясо донер, лаваш, овощи, чесночный и искендер соусы.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Донер дурум по-турецки</h3><strong>640 сом</strong></div>
+            <div class="meta">490 г</div>
+            <p>Мясо донер, фирменный соус, чеддер, овощи, лаваш.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Турецкий лаваш</h3><strong>180 сом</strong></div>
+            <div class="meta"></div>
+            <p>Свежий турецкий лаваш.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Мини-лаваш</h3><strong>30 сом</strong></div>
+            <div class="meta"></div>
+            <p>Мини-лаваш.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🍲</span><div><h2>Восточная кухня</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Манты с мясом</h3><strong>370 сом</strong></div>
+            <div class="meta">400 г</div>
+            <p>Говядина, лук, рис, специи.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Манты с мясом и джусаем</h3><strong>365 сом</strong></div>
+            <div class="meta">400 г</div>
+            <p>Говядина, лук, рис, джусай.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Босо лагман</h3><strong>350 сом</strong></div>
+            <div class="meta">550 г</div>
+            <p>Говядина, лук, болгарский перец, пекинская капуста, специи.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Лагман гуйру</h3><strong>350 сом</strong></div>
+            <div class="meta">550 г</div>
+            <p>Говядина, лук, болгарский перец, капуста, специи.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Куурдак из баранины</h3><strong>650 сом</strong></div>
+            <div class="meta">490 г</div>
+            <p>Баранина, лук, картофель.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🍜</span><div><h2>Супы</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Чечевичный</h3><strong>210 сом</strong></div>
+            <div class="meta">340 г</div>
+            <p>Чечевица, лук, морковь, картофель, томатная паста, мята.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Таласча шорпо</h3><strong>310 сом</strong></div>
+            <div class="meta">540 г</div>
+            <p>Жуупка, говядина, чучук, лук, насыщенный бульон.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Куриная лапша по-домашнему</h3><strong>250 сом</strong></div>
+            <div class="meta">390 г</div>
+            <p>Куриная грудка, овощи, домашняя лапша, яйцо, зелень.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Тыквенный крем-суп</h3><strong>240 сом</strong></div>
+            <div class="meta">340 г</div>
+            <p>Тыква, лук, морковь, имбирь.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🍢</span><div><h2>Шашлыки</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Шашлык из баранины</h3><strong>750 сом</strong></div>
+            <div class="meta">400 г</div>
+            <p>Баранина, специи.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Шашлык из говядины</h3><strong>760 сом</strong></div>
+            <div class="meta">400 г</div>
+            <p>Говядина, специи.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🥗</span><div><h2>Салаты</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Гаурдагы с творогом</h3><strong>450 сом</strong></div>
+            <div class="meta">400 г</div>
+            <p>Болгарский перец, помидоры, огурцы, красный лук, гранат, орех, творог, руккола.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Свекольный с черносливом и курутом</h3><strong>570 сом</strong></div>
+            <div class="meta">290 г</div>
+            <p>Запечённая свёкла, шпинат, руккола, брынза, чернослив, изюм, семечки, курут.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Хрустящие баклажаны</h3><strong>420 сом</strong></div>
+            <div class="meta">400 г</div>
+            <p>Баклажан, кинза, чеснок, сузьма, кунжут, сладкий чили.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Цезарь с курицей</h3><strong>450 сом</strong></div>
+            <div class="meta">315 г</div>
+            <p>Айсберг, салатные листья, черри, курица, фирменный соус, пармезан, крутоны.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Томаты с мини-люля</h3><strong>490 сом</strong></div>
+            <div class="meta">230 г</div>
+            <p>Розовые томаты, красный лук, брынза, оливковое масло, семечки.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Салат с каттамой на мангале</h3><strong>590 сом</strong></div>
+            <div class="meta">480 г</div>
+            <p>Микс салат, ореховый соус, баклажан, томлёная говядина, каттама, айран.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🍕</span><div><h2>Пицца и пиде</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Мясная пицца</h3><strong>590 сом</strong></div>
+            <div class="meta">630 г</div>
+            <p>Моцарелла, турецкий кашар, говядина, соус пилатти.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Пицца три сыра</h3><strong>660 сом</strong></div>
+            <div class="meta">500 г</div>
+            <p>Моцарелла, турецкий кашар, чеддер.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Пицца пепперони</h3><strong>590 сом</strong></div>
+            <div class="meta">550 г</div>
+            <p>Соус пилатти, моцарелла, пепперони.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Пиде с мясом</h3><strong>590 сом</strong></div>
+            <div class="meta">460 г</div>
+            <p>Говядина, моцарелла, кашар.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Пиде с сыром</h3><strong>495 сом</strong></div>
+            <div class="meta">330 г</div>
+            <p>Моцарелла, кашар, чеддер.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Пиде со шпинатом</h3><strong>480 сом</strong></div>
+            <div class="meta">320 г</div>
+            <p>Моцарелла, кашар, шпинат.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🥔</span><div><h2>Гарниры</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Рис</h3><strong>130 сом</strong></div>
+            <div class="meta">150 г</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Булгур</h3><strong>120 сом</strong></div>
+            <div class="meta">150 г</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Фри</h3><strong>180 сом</strong></div>
+            <div class="meta">200 г</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Картофель по-деревенски</h3><strong>180 сом</strong></div>
+            <div class="meta">200 г</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Наггетсы</h3><strong>200 сом</strong></div>
+            <div class="meta">200 г</div>
+            <p></p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>⭐</span><div><h2>Комбо меню</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Томби с фри + напиток</h3><strong>850 сом</strong></div>
+            <div class="meta">430 г</div>
+            <p>Томби с фри. Напиток на выбор: кола 0,5 л или чалап.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Бургер с курицей + фри + напиток</h3><strong>720 сом</strong></div>
+            <div class="meta">460 г</div>
+            <p>Бургер с курицей, фри и напиток 0,5 л.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Манты + мини-дутый лаваш + напиток</h3><strong>550 сом</strong></div>
+            <div class="meta">500 г</div>
+            <p>Манты с мясом, мини-дутый лаваш и напиток 0,5 л.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Донер дурум + картофель по-деревенски + напиток</h3><strong>750 сом</strong></div>
+            <div class="meta">500 г</div>
+            <p>Донер дурум, картофель по-деревенски и напиток 0,5 л.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🍰</span><div><h2>Десерты</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Дилбер</h3><strong>1800 сом/кг</strong></div>
+            <div class="meta"></div>
+            <p>Восточный десерт.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Кадайф</h3><strong>1800 сом/кг</strong></div>
+            <div class="meta"></div>
+            <p>Восточный десерт.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Хавуч дилими</h3><strong>1800 сом/кг</strong></div>
+            <div class="meta"></div>
+            <p>Восточный десерт.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Сарма</h3><strong>2300 сом/кг</strong></div>
+            <div class="meta"></div>
+            <p>Восточный десерт.</p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🥤</span><div><h2>Напитки</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Ташкентский чай с навaатом</h3><strong>240 сом</strong></div>
+            <div class="meta">0,5 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Чёрный / зелёный чай</h3><strong>115 сом</strong></div>
+            <div class="meta">0,5 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Бардак чай</h3><strong>40 сом</strong></div>
+            <div class="meta">0,2 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Чайник чая</h3><strong>350 сом</strong></div>
+            <div class="meta">0,5 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Кола / Фанта / Спрайт</h3><strong>150 сом</strong></div>
+            <div class="meta">0,5 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Кола стекло</h3><strong>140 сом</strong></div>
+            <div class="meta">0,25 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>BonAqua</h3><strong>110 сом</strong></div>
+            <div class="meta">1 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Schweppes тоник</h3><strong>200 сом</strong></div>
+            <div class="meta">0,45 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Сок в ассортименте</h3><strong>290 сом</strong></div>
+            <div class="meta">1 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Чалап</h3><strong>100 сом</strong></div>
+            <div class="meta">0,28 л</div>
+            <p></p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🍹</span><div><h2>Лимонады</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Мохито</h3><strong>220 / 480 сом</strong></div>
+            <div class="meta">0,3 л / 1 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Манго — маракуйя</h3><strong>220 / 480 сом</strong></div>
+            <div class="meta">0,3 л / 1 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Персик — чёрная смородина</h3><strong>220 / 480 сом</strong></div>
+            <div class="meta">0,3 л / 1 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Щавель — ананас</h3><strong>220 / 480 сом</strong></div>
+            <div class="meta">0,3 л / 1 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Грейпфрут — личи</h3><strong>220 / 480 сом</strong></div>
+            <div class="meta">0,3 л / 1 л</div>
+            <p></p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🥛</span><div><h2>Смузи и милкшейки</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Тропический</h3><strong>340 сом</strong></div>
+            <div class="meta">0,2 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Авокадо драйв</h3><strong>340 сом</strong></div>
+            <div class="meta">0,2 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Зелёный сад</h3><strong>340 сом</strong></div>
+            <div class="meta">0,2 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Классический милкшейк</h3><strong>360 сом</strong></div>
+            <div class="meta">0,3 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Орео</h3><strong>360 сом</strong></div>
+            <div class="meta">0,3 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Сникерс</h3><strong>360 сом</strong></div>
+            <div class="meta">0,3 л</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Клубничный</h3><strong>360 сом</strong></div>
+            <div class="meta">0,3 л</div>
+            <p></p>
+          </div>
+        </article></div>
+    </section>
+    <section class="menu-section" id="">
+      <div class="section-title"><span>🫓</span><div><h2>Соусы и добавки</h2><div class="rule"></div></div></div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Хайдари соус</h3><strong>85 сом</strong></div>
+            <div class="meta">60 г</div>
+            <p>Сузьма, мята, лимон, соль, специи.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Хумус</h3><strong>85 сом</strong></div>
+            <div class="meta">130 г</div>
+            <p>Нут, оливковое масло, тахини, лимонный сок.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Бабагануш</h3><strong>85 сом</strong></div>
+            <div class="meta">130 г</div>
+            <p>Сузьма, баклажан, специи.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Аджапсандали</h3><strong>85 сом</strong></div>
+            <div class="meta">130 г</div>
+            <p>Баклажан, болгарский перец, красный лук, кинза, чеснок, специи.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Лимон</h3><strong>70 сом</strong></div>
+            <div class="meta">50 г</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Мята</h3><strong>20 сом</strong></div>
+            <div class="meta">10 г</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Мёд</h3><strong>90 сом</strong></div>
+            <div class="meta">50 г</div>
+            <p></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="dish-head"><h3>Молоко</h3><strong>70 сом</strong></div>
+            <div class="meta">100 мл</div>
+            <p></p>
+          </div>
+        </article></div>
+    </section>
+</main>
+
+<section class="contact" id="contacts">
+  <h2>Мы ждём вас</h2>
+  <p>УСТА ХАНЫМ · ТУРЕЦКАЯ И ВОСТОЧНАЯ КУХНЯ</p>
+
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon">⌖</div>
+      <div><strong>Old Bishkek Food Court</strong><span>Место расположения</span></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">◷</div>
+      <div><strong>Ежедневно: 10:00 – 22:00</strong><span>Мы работаем каждый день</span></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">♧</div>
+      <div><strong>Доставка также имеется</strong><span>Уточняйте условия доставки</span></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">◉</div>
+      <div><strong>WhatsApp: 0755 886 688</strong><span>Напишите нам</span></div>
+    </div>
+  </div>
+
+  <a class="btn" href="https://wa.me/996755886688" target="_blank">НАПИСАТЬ В WHATSAPP</a>
+</section>
+
+<div class="footer">УСТА ХАНЫМ · ВКУС · ТРАДИЦИИ · ГОСТЕПРИИМСТВО</div>
+</body>
+</html>
